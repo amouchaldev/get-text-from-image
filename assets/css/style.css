@@ -1,69 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 15px;
+  min-height: 100vh !important;
+  background-image: url("assets/images/Cloudy.svg") !important;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-color: none;
+}
 .box {
-	padding: 0.5em;
-	width: 100%;
-	margin:0.5em;
+  padding: 0.5em;
+  width: 100%;
+  margin: 0.5em;
 }
 
 .box-2 {
-	padding: 0.5em;
-	overflow: hidden;
-	width: 100%;
+  padding: 0.5em;
+  overflow: hidden;
+  width: 100%;
 }
 
 .options label,
-.options input{
-	width:4em;
-	padding:0.5em 1em;
+.options input {
+  width: 4em;
+  padding: 0.5em 1em;
 }
 .hide {
-	display: none;
+  display: none;
 }
 
 img {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 .text-result {
-	user-select: all;
+  user-select: all;
 }
-
-.img-result > div{
-	width: 13%;
+.img-result > div {
+  overflow-x: auto;
+}
+.img-result .cropped-img {
+  width: 20%;
+  flex: 0 0 auto;
 }
 
 .cut-img {
-	border-radius: 0% 5% 5% 0%!important;
+  border-radius: 0% 5% 5% 0% !important;
 }
 .cut-img:hover > i {
-	transform: scale(.9);
-	transition: all .3s;
+  transform: scale(0.9);
+  transition: all 0.3s;
 }
 .cut-img:active {
-	transform: scale(.9);
-	transition: all .3s;
+  transform: scale(0.9);
+  transition: all 0.3s;
 }
 
-.del-icon, .dwn-icon {
-	bottom: -100%;
-	transition: all .5s;
-	transform: translate(0, -38%);
+.del-icon,
+.dwn-icon {
+  bottom: -100%;
+  transition: all 0.5s;
+  transform: translate(0, -38%);
+  width: 1.6rem;
 }
 .dwn-icon {
-	left: 38%;
-	transform: translate(-38%, 0%);
+  left: 38%;
+  transform: translate(-38%, 0%);
 }
 .dwn-icon i {
-	transform: translate(0, 5px);
+  transform: translate(0, 5px);
 }
 .del-icon {
-	left: 57%;
-	transform: translate(-57%, 0%);
-	cursor: pointer;
+  left: 58%;
+  transform: translate(-58%, 0%);
+  cursor: pointer;
 }
-.cropped-img:hover .dwn-icon, .cropped-img:hover .del-icon {
-	bottom: 44%;
+.cropped-img:hover .dwn-icon,
+.cropped-img:hover .del-icon {
+  bottom: 88%;
 }
-.dwn-icon:hover > i, .del-icon:hover {
-	transition: all .5;
-	opacity: .7;
+.dwn-icon:hover > img,
+.del-icon:hover {
+  transition: all 0.5s;
+  opacity: 0.7;
+}
+.scissor-icon {
+  width: 1.1rem;
 }

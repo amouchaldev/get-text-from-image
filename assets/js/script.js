@@ -30,7 +30,7 @@ if (upload) {
           save.classList.remove("hide");
           // options.classList.remove('hide');
           // init cropper
-          cropper = new Cropper(img);
+          cropper = new Cropper(img, {zoomOnWheel: false});
         }
       };
       reader.readAsDataURL(e.target.files[0]);
@@ -58,13 +58,14 @@ if (save) {
     // Get a reference to our file input
     const fileInput = document.createElement("input");
     fileInput.type = "file";
-    fileInput.name = "images[]";
-    img_result.innerHTML += `
+    img_result.querySelector('div').innerHTML += `
           <div class="position-relative cropped-img me-1 overflow-hidden">
               <img src="${imgSrc}" class="cropped w-100" />
               <input type="hidden" name="image-${counter++}" value="${imgSrc}" />
-              <a href="${imgSrc}" download="image.png" class=" position-absolute dwn-icon"><i class="fa-solid fa-cloud-arrow-down text-dark"></i></a>
-              <i class="fa-solid fa-trash text-dark position-absolute del-icon" onclick="this.parentElement.remove()"></i>
+              <a href="${imgSrc}" download="image.png" class=" position-absolute dwn-icon">
+                <img src="./assets/images/download-icon.svg" />
+              </a>
+              <img src="./assets/images/trash-icon.svg" class="position-absolute del-icon" onclick="this.parentElement.remove()" />
           </div>
         `;
   });
@@ -72,7 +73,7 @@ if (save) {
 if (convert) {
   convert.addEventListener("click", (e) => {
     e.preventDefault();
-    if (!img_result.children.length) return Swal.fire("there is no image !");
+    if (!img_result.children.length) return alert("there is no image !");
     document.querySelector("form").submit();
   });
 }
